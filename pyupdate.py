@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 
-
 """
 pyupdate.py: Maintenance function for automatically updating python modules.
 """
+# Import required modules
 from __future__ import absolute_import
+import sys
+from subprocess import call
+import pip
 
 __author__ = "DM Brady"
 __datewritten__ = "12Jun2015"
-__lastmodified__ = "15Jun2015"
+__lastmodified__ = "04Apr2016"
 
-# Import required modules
-import pip, sys
-from subprocess import call
 
 # Updating python packages through pip
 def update_py_packages():
@@ -22,8 +22,8 @@ def update_py_packages():
 
     #checks to see if python2.x or 3.x
     if sys.version_info[0] == 2:
-        call("pip install --upgrade --no-use-wheel pip", shell=True)
-        call("pip install --upgrade --no-use-wheel setuptools", shell=True)
+        call("pip install --upgrade --no-binary :all: pip", shell=True)
+        call("pip install --upgrade --no-binary :all: setuptools", shell=True)
 
         for dist in pip.get_installed_distributions():
             call("pip install --upgrade " + dist.project_name, shell=True)
