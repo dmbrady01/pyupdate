@@ -20,7 +20,7 @@ def update_py_packages():
     installed using pip. First tries to upgrade pip
     and setuptools."""
 
-    #checks to see if python2.x or 3.x
+    # checks to see if python2.x or 3.x
     if sys.version_info[0] == 2:
         call("pip install --upgrade --no-binary :all: pip", shell=True)
         call("pip install --upgrade --no-binary :all: setuptools", shell=True)
@@ -33,5 +33,3 @@ def update_py_packages():
 
         for dist in pip.get_installed_distributions():
             call("pip3 install --upgrade " + dist.project_name, shell=True)
-
-

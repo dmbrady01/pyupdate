@@ -15,6 +15,7 @@ That's it!
 Version History
 ==============
 Version | Date       | Description
-------- | ---------- | -----------
+--------- | ---------- | -----------
+1.1.1   | 2016-10-22 | Some comestic changes to the code
 1.1.0   | 2015-04-04 | Updated --no-use-wheel to --no-binary
 1.0.0   | 2015-03-17 | Initial release
